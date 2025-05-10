@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+  <title>Тойға шақыру</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Balsamiq Sans', serif;
+      background: url('fon.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+	
+	.main {
+		font-size: 2rem;
+		text-align: center;
+		 color: #800000;
+	}
+	.main-80 {
+		font-size: 1.5rem;
+		text-align: center;
+		color:#006400;
+	}
+	.main-2 {
+		font-size: 1rem;
+		text-align: center;
+	}
+	.main-3 {
+		font-size: 1.1rem;
+		text-align: center;
+		color: #800000;
+	}
+
+    .overlay {
+      background-color: transparent;
+      padding: 0px 0px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 5px;
+      margin-top: 40px;
+	  color: #003366;
+    }
+
+    .overlay p {
+      font-size: 1.3rem;
+      margin: 10px 0;
+    }
+
+    .overlay a {
+      color: #006644;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .overlay a:hover {
+      text-decoration: underline;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 10px auto;
+      padding: 0 20px;
+      background-color: transparent;
+    }
+
+    iframe {
+      width: 100%;
+      height: 950px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+    }
+	.form-link {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .form-link a {
+      background-color: #228B22;
+      color: white;
+      padding: 5px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    .form-link a:hover {
+      background-color: #3d755e;
+    }
+	 .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 700px;
+      margin: 5% auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .modal iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .overlay p {
+        font-size: 1rem;
+      }
+      iframe {
+        height: 1100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="ake-turaly-an.mp3" type="audio/mpeg">
+    Сіздің браузер бұл музыканы ойната алмайды.
+  </audio>
+  <div class="main">
+	<h2><strong>Тойға шақыру</strong></h2>
+	<p><strong>✩✩✩<strong></p>
+  </div>
+  <div class="overlay">
+	<p>Құрметті ағайын-туыс, құда-жекжат, бауырлар, нағашы-жиен, дос-жарандар мен көршілер!</p>
+	<p>Сіздерді отбасымыздың асқар тауы, әулетіміздің тірегі, ардақты</p> 
+  </div>
+  <div class="main">
+	<p><strong>Жарқынбек әкеміздің 80 жас мерей тойына</strong></p>
+  </div>
+  <div class="overlay">
+	<p>арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+  </div>
+  <div class="main">
+	<p><strong>✩✩✩<strong></p>
+  </div>
+  <div class="main-2">
+	<p><strong>🕰Күні және уақыты: 📅 13 маусым 2025 жыл, 🕕сағат 18:00</strong></p>
+    <!-- Кері санау көрсету -->
+	
+	<div id="countdown" style="font-size: 14px; color: #FF0000; font-weight: bold; margin-bottom: 20px;"></div>
+	<script>
+	  // Той уақыты —
+	  const weddingDate = new Date("2025-06-13T18:00:00");
+
+	  function updateCountdown() {
+		const now = new Date();
+		const diff = weddingDate - now;
+
+		if (diff <= 0) {
+		  document.getElementById("countdown").innerHTML = "🎉 Той басталды!";
+		  clearInterval(timer);
+		  return;
+		}
+
+		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+		const minutes = Math.floor((diff / (1000 * 60)) % 60);
+		const seconds = Math.floor((diff / 1000) % 60);
+
+		document.getElementById("countdown").innerHTML =
+		  `${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд`;
+	  }
+
+	  updateCountdown(); // Алғашқы жүктеу
+	  const timer = setInterval(updateCountdown, 1000); // Әр секунд сайын жаңарту
+	</script>
+	<p><strong>✧✧✧<strong></p>
+	<p><strong>📍Мекен-жайы:</strong>
+      <a href="https://2gis.kz/almaty/firm/70000001057412615/77.30496%2C43.368513?m=77.305016%2C43.367999%2F18.61" target="_blank">
+	  <img src="2gis.png" style="height: 24px; border-radius: 5px;">
+        «Наиля» мейрамханасы, Қайназар ауылы, Еңбекшіқазақ ауданы
+		
+      </a>
+    </p>
+  </div>
+  
+  <div class="main">
+	<p><strong>✩✩✩<strong></p>
+  </div>
+  <div class="main-2">
+	<p>💌 Тойға қатысуды растауыңызды сұраймыз<br>👇🏿</p>
+	 <div class="form-link">
+		<a onclick="openForm()">Жауап беру</a>
+	  </div>
+  </div>
+
+  <div class="modal" id="formModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeForm()">×</span>
+      <iframe id="googleForm" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openForm() {
+      const modal = document.getElementById('formModal');
+      const iframe = document.getElementById('googleForm');
+      iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSeG_IzQzU-uuc1jI83fap-dzTkMc9F4IzbV32ucTBtb3yFPnw/viewform?embedded=true&hl=kk";
+      modal.style.display = 'block';
+    }
+
+    function closeForm() {
+      const modal = document.getElementById('formModal');
+      const iframe = document.getElementById('googleForm');
+      iframe.src = "";
+      modal.style.display = 'none';
+    }
+   </script>
+   <div class="main-3">
+	<p>Келіңіздер, тойымыздың қадірлі қонағы болыңыздар!</p>
+   </div>
+</a>
+
+</body>
+</html>
