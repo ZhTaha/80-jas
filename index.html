@@ -197,15 +197,24 @@
   <script>
     const audio = document.getElementById("myAudio");
     const button = document.getElementById("toggleButton");
-    let isPlaying = true;
+    let isPlaying = false;
+	
+	const startAudio = () => {
+      if (!isPlaying) {
+        audio.play();
+        isPlaying = true;
+      }
+      document.body.removeEventListener("click", startAudio);
+    };
+
+    document.body.addEventListener("click", startAudio);
 
     button.addEventListener("click", () => {
-	  if (isPlaying) {
-        audio.pause();
-      } else {
+	  if (audio.paused) {
         audio.play();
+      } else {
+        audio.pause();
       }
-      isPlaying = !isPlaying;
     });
   </script>
   
