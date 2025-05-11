@@ -25,13 +25,17 @@
 		color:#006400;
 	}
 	.main-2 {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		text-align: center;
 	}
 	.main-3 {
 		font-size: 1.1rem;
 		text-align: center;
 		color: #800000;
+	}
+	.main-4 {
+		font-size: 0.9rem;
+		text-align: center;
 	}
 
     .overlay {
@@ -78,6 +82,7 @@
       display: flex;
       justify-content: center;
       margin-top: 20px;
+	  
     }
     .form-link a {
       background-color: #228B22;
@@ -88,6 +93,7 @@
       font-weight: bold;
       font-size: 16px;
       transition: background 0.3s ease;
+	  animation: blink 2s infinite;
     }
     .form-link a:hover {
       background-color: #3d755e;
@@ -125,6 +131,14 @@
       color: #333;
       cursor: pointer;
     }
+	
+	@keyframes blink {
+      0% { background-color: #ff0000; }
+      25% { background-color: #00ff00; }
+      50% { background-color: #0000ff; }
+      75% { background-color: #ffff00; }
+      100% { background-color: #ff00ff; }
+    }
 
     @media (max-width: 600px) {
       .overlay p {
@@ -134,17 +148,67 @@
         height: 1100px;
       }
     }
+	#toggleButton {
+      padding: 0px 0px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      animation: textGlow 2s infinite alternate;
+    }
+
+    @keyframes textGlow {
+      0% {
+        color: #ff4081;
+        text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081;
+      }
+      25% {
+        color: #00e676;
+        text-shadow: 0 0 5px #00e676, 0 0 15px #00e676;
+      }
+      50% {
+        color: #7c4dff;
+        text-shadow: 0 0 5px #7c4dff, 0 0 15px #7c4dff;
+      }
+      75% {
+        color: #ffab00;
+        text-shadow: 0 0 5px #ffab00, 0 0 15px #ffab00;
+      }
+      100% {
+        color: #00bcd4;
+        text-shadow: 0 0 5px #00bcd4, 0 0 15px #00bcd4;
+      }
+    }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="ake-turaly-an.mp3" type="audio/mpeg">
-    Сіздің браузер бұл музыканы ойната алмайды.
-  </audio>
   <div class="main">
 	<h2><strong>Тойға шақыру</strong></h2>
-	<p><strong>✩✩✩<strong></p>
+	<button id="toggleButton">🎵✩✩✩🎵</button>
   </div>
+  
+  <audio id="myAudio" loop>
+   <source src="ake-turaly-an.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script>
+    const audio = document.getElementById("myAudio");
+    const button = document.getElementById("toggleButton");
+    let isPlaying = true;
+
+    button.addEventListener("click", () => {
+	  if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+  
   <div class="overlay">
 	<p>Құрметті ағайын-туыс, құда-жекжат, бауырлар, нағашы-жиен, дос-жарандар мен көршілер!</p>
 	<p>Сіздерді отбасымыздың асқар тауы, әулетіміздің тірегі, ардақты</p> 
@@ -162,7 +226,7 @@
 	<p>📅 13 маусым 2025 жыл, 🕕сағат 18:00</p>
     <!-- Кері санау көрсету -->
 	
-	<div id="countdown" style="font-size: 14px; color: #FF0000; font-weight: bold; margin-bottom: 20px;"></div>
+	<div id="countdown" style="font-size: 18px; color: #FF0000; font-weight: bold; margin-bottom: 20px;"></div>
 	<script>
 	  // Той уақыты —
 	  const weddingDate = new Date("2025-06-13T18:00:00");
@@ -234,5 +298,8 @@
    <div class="main-3">
 	<p>Келіңіздер, тойымыздың қадірлі қонағы болыңыздар!</p>
    </div>
+   <div class="main-4">
+	<p><strong>Той иелері:</strong> жұбайы, ұл-қыздары және немерелері</p>
+	</div>
 </body>
 </html>
