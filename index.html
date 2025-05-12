@@ -25,16 +25,16 @@
 		color:#006400;
 	}
 	.main-2 {
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 		text-align: center;
 	}
 	.main-3 {
-		font-size: 1.1rem;
+		font-size: 1.3rem;
 		text-align: center;
 		color: #800000;
 	}
 	.main-4 {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		text-align: center;
 	}
 
@@ -50,7 +50,7 @@
     }
 
     .overlay p {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin: 10px 0;
     }
 
@@ -91,7 +91,7 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 1.5rem;
       transition: background 0.3s ease;
 	  animation: blink 2s infinite;
     }
@@ -182,11 +182,72 @@
         text-shadow: 0 0 5px #00bcd4, 0 0 15px #00bcd4;
       }
     }
+	 .gold-glow {
+      color: #800000; /* Алтын түс */
+	  font-size: 3rem;
+      text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FFA500,
+        0 0 15px #FFC107,
+        0 0 20px #FFEB3B;
+      animation: glowGold 0.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowGold {
+      0% {
+        text-shadow:
+          0 0 5px #FFD700,
+          0 0 10px #FFA500,
+          0 0 15px #FFC107,
+          0 0 20px #FFEB3B;
+      }
+      100% {
+        text-shadow:
+          0 0 15px #FFEB3B,
+          0 0 20px #FFC107,
+          0 0 25px #FFA500,
+          0 0 35px #FFD700;
+      }
+    }
+	/* Алтын ұшқындар контейнері */
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #FF8C00;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: sparkleMove 8s linear infinite;
+      filter: blur(1px);
+    }
+
+    @keyframes sparkleMove {
+      0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20vw) scale(3.5);
+        opacity: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <div class="sparkles" id="sparkleContainer"></div>
   <div class="main">
-	<h2><strong>Тойға шақыру</strong></h2>
+	<h2 class="gold-glow"><strong>Тойға шақыру</strong></h2>
 	<button id="toggleButton">🎵✩✩✩🎵</button>
   </div>
   
@@ -216,6 +277,20 @@
         audio.pause();
       }
     });
+	
+	const container = document.getElementById("sparkleContainer");
+    const count = 100;
+
+    for (let i = 0; i < count; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.classList.add("sparkle");
+      sparkle.style.top = Math.random() * 100 + "%";
+      sparkle.style.left = Math.random() * 100 + "%";
+      sparkle.style.animationDelay = (Math.random() * 10) + "s";
+      sparkle.style.opacity = Math.random().toFixed(1);
+      sparkle.style.width = sparkle.style.height = (Math.random() * 3 + 2) + "px";
+      container.appendChild(sparkle);
+    }
   </script>
   
   <div class="overlay">
@@ -223,7 +298,8 @@
 	<p>Сіздерді отбасымыздың асқар тауы, әулетіміздің тірегі, ардақты</p> 
   </div>
   <div class="main">
-	<p><strong>Жарқынбек әкеміздің 80 жас мерей тойына</strong></p>
+	<p class="gold-glow"><strong>Жарқынбек</strong></p>
+	<p>әкеміздің 80 жас мерей тойына</p>
   </div>
   <div class="overlay">
 	<p>арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
