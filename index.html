@@ -245,7 +245,7 @@
   </style>
 </head>
 <body>
-  <div class="sparkles" id="sparkleContainer"></div>
+  
   <div class="main">
 	<h2 class="gold-glow"><strong>Тойға шақыру</strong></h2>
 	<button id="toggleButton">🎵✩✩✩🎵</button>
@@ -284,8 +284,8 @@
     for (let i = 0; i < count; i++) {
       const sparkle = document.createElement("div");
       sparkle.classList.add("sparkle");
-      sparkle.style.top = Math.random() * 100 + "%";
-      sparkle.style.left = Math.random() * 100 + "%";
+      sparkle.style.top = Math.random() * 50 + "%";
+      sparkle.style.left = Math.random() * 50 + "%";
       sparkle.style.animationDelay = (Math.random() * 10) + "s";
       sparkle.style.opacity = Math.random().toFixed(1);
       sparkle.style.width = sparkle.style.height = (Math.random() * 3 + 2) + "px";
