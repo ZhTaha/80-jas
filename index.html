@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-  <title>Тойға шақыру</title>
+  <title>80 жас мерей тойға шақыру</title>
   <style>
     body {
       margin: 0;
@@ -12,30 +12,38 @@
       background: url('fon.png') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
+	  text-shadow:
+        0 0 0px white,
+        0 0 1px white,
+        0 0 5px white,
+        0 0 10px white;	 
     }
 	
 	.main {
-		font-size: 2rem;
+		font-size: 3rem;
 		text-align: center;
-		 color: #800000;
-	}
-	.main-80 {
-		font-size: 1.5rem;
-		text-align: center;
-		color:#006400;
+		color: #DAA520;
 	}
 	.main-2 {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		text-align: center;
+		color: white;
+		text-shadow:
+        0 0 0px white,
+		0 0 4px white;
 	}
 	.main-3 {
-		font-size: 1.3rem;
+		font-size: 1.7rem;
 		text-align: center;
-		color: #800000;
+		color: #DAA520;
+		text-shadow:
+        0 0 1px white,
+		0 0 3px white;
 	}
 	.main-4 {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		text-align: center;
+		color: #8B4513;
 	}
 
     .overlay {
@@ -46,16 +54,20 @@
       text-align: center;
       border-radius: 5px;
       margin-top: 40px;
-	  color: #003366;
+	  color: #000080;
+	  text-shadow:
+		0 0 5px white,
+		0 0 10px white,
+		0 0 15px white,
+		0 0 25px white;
     }
 
     .overlay p {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin: 10px 0;
     }
 
     .overlay a {
-      color: #006644;
       font-weight: bold;
       text-decoration: none;
     }
@@ -89,6 +101,8 @@
       color: white;
       padding: 5px 20px;
       text-decoration: none;
+	  text-shadow:
+        0 0 5px	#696969;
       border-radius: 8px;
       font-weight: bold;
       font-size: 1.5rem;
@@ -112,7 +126,7 @@
       width: 90%;
       max-width: 700px;
       margin: 5% auto;
-      background: white;
+      background: transparent;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -183,30 +197,30 @@
       }
     }
 	 .gold-glow {
-      color: #800000; /* Алтын түс */
+      color: gold; /* Алтын түс */
 	  font-size: 3rem;
       text-shadow:
-        0 0 5px #FFD700,
-        0 0 10px #FFA500,
-        0 0 15px #FFC107,
-        0 0 20px #FFEB3B;
+        0 0 0px #FFD700,
+        0 0 1px #FFA500,
+        0 0 5px #FFC107,
+        0 0 10px #FFEB3B;
       animation: glowGold 0.5s ease-in-out infinite alternate;
     }
 
     @keyframes glowGold {
       0% {
         text-shadow:
-          0 0 5px #FFD700,
-          0 0 10px #FFA500,
-          0 0 15px #FFC107,
-          0 0 20px #FFEB3B;
+          0 0 0px #FFD700,
+          0 0 2px #FFA500,
+          0 0 5px #FFC107,
+          0 0 10px #FFEB3B;
       }
       100% {
         text-shadow:
-          0 0 15px #FFEB3B,
-          0 0 20px #FFC107,
-          0 0 25px #FFA500,
-          0 0 35px #FFD700;
+          0 0 5px #FFEB3B,
+          0 0 10px #FFC107,
+          0 0 15px #FFA500,
+          0 0 25px #FFD700;
       }
     }
 	/* Алтын ұшқындар контейнері */
@@ -247,8 +261,8 @@
 <body>
   
   <div class="main">
-	<h2 class="gold-glow"><strong>Тойға шақыру</strong></h2>
-	<button id="toggleButton">🎵✩✩✩🎵</button>
+	<p class="gold-glow" style="color: #DAA520; font-size: 5rem;"><strong>Тойға шақыру</strong></p>
+	<button id="toggleButton" style="font-size: 2rem;">🎼✩✩✩🎼</button>
   </div>
   
   <audio id="myAudio" loop>
@@ -298,8 +312,8 @@
 	<p>Сіздерді отбасымыздың асқар тауы, әулетіміздің тірегі, ардақты</p> 
   </div>
   <div class="main">
-	<p class="gold-glow"><strong>Жарқынбек</strong></p>
-	<p>әкеміздің 80 жас мерей тойына</p>
+	<p style="color: #DAA520; font-size: 4rem;"><strong>Жарқынбек</strong></p>
+	<p>әкеміздің <span class="gold-glow" style="color: #DAA520; font-size: 3.7rem;">80 жас</span> мерей тойына</p>
   </div>
   <div class="overlay">
 	<p>арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
@@ -309,9 +323,10 @@
 	<h1>🕰</h1>
 	<p><strong>Күні және уақыты:</strong></p>
 	<p>📅 13 маусым 2025 жыл, 🕕сағат 18:00</p>
+	<p style="color: #FF0000;">Тойға дейін:</p>
     <!-- Кері санау көрсету -->
 	
-	<div id="countdown" style="font-size: 18px; color: #FF0000; font-weight: bold; margin-bottom: 20px;"></div>
+	<div id="countdown" style="font-size: 22px; color: #FF0000; font-weight: bold; margin-bottom: 20px;"></div>
 	<script>
 	  // Той уақыты —
 	  const weddingDate = new Date("2025-06-13T18:00:00");
@@ -344,13 +359,12 @@
       <a href="https://2gis.kz/almaty/firm/70000001057412615/77.30496%2C43.368513?m=77.305016%2C43.367999%2F18.61" target="_blank">
 	  <img src="2gis.png" style="height: 24px; border-radius: 5px;">
         «Наиля» мейрамханасы, Қайназар ауылы, Еңбекшіқазақ ауданы
-		
       </a>
     </p>
   </div>
   
   <div class="main">
-	<p><strong>✩✩✩<strong></p>
+	<p class="gold-glow"><strong>✩✩✩<strong></p>
   </div>
   <div class="main-2">
 	<p>💌 Тойға қатысуды растауыңызды сұраймыз<br>👇🏿</p>
@@ -361,7 +375,7 @@
 
   <div class="modal" id="formModal">
     <div class="modal-content">
-      <span class="close-btn" onclick="closeForm()">×</span>
+      <span class="close-btn" onclick="closeForm()">Х</span>
       <iframe id="googleForm" src=""></iframe>
     </div>
   </div>
